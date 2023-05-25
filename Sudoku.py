@@ -12,7 +12,7 @@ sudoku = [[5,3,0,0,7,0,0,0,0],
           [0,0,0,0,8,0,0,0,0]]
 
 
-def main(x, y, n):                             #
+def check_func(x, y, n):                             #
     global sudoku                              # Sudoku matrix is global, hasn't needed to be
     for i in range(9):                         # 9 is a value of raw's, and column's
         if sudoku[x][i] == n:                  # Using coordinate's to point a specific value is matrix
@@ -36,7 +36,7 @@ def solve():
         for y in range(9):
             if sudoku[x][y] == 0:
                 for n in range(1, 10):
-                    if main(x, y, n):
+                    if check_func(x, y, n):
                         sudoku[x][y] = n
                         solve()
                         sudoku[x][y] = 0
